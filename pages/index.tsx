@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import { useDarkMode } from "usehooks-ts";
+// import { useDarkMode } from "usehooks-ts";
 import Bridge2 from "~~/components/Bridge";
 import { MetaHeader } from "~~/components/MetaHeader";
-import Bridge from "~~/components/Swap";
+// import Bridge from "~~/components/Swap";
 
 
 const Home: NextPage = () => {
