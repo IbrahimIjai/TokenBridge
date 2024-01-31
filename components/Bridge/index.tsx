@@ -1,5 +1,5 @@
 import {useState } from "react";
-import { NUMBER_REGEX } from "../Swap/utils";
+import { NUMBER_REGEX } from "./utils";
 import { InputBase } from "../scaffold-eth";
 import BridgeButton from "./BridgeButton";
 import NetworksSelectBoxIn from "./NetworkSelectBoxIn";

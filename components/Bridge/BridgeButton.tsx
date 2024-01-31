@@ -1,5 +1,5 @@
 import React from "react";
-import { NUMBER_REGEX } from "../Swap/utils";
+import { NUMBER_REGEX } from "./utils";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
 import { useScaffoldContractRead } from "~~/hooks/scaffold-eth";
