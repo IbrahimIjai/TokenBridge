@@ -1,4 +1,4 @@
-import {, useState } from "react";
+import {useState } from "react";
 import { NUMBER_REGEX } from "../Swap/utils";
 import { InputBase } from "../scaffold-eth";
 import BridgeButton from "./BridgeButton";
