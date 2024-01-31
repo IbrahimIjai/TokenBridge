@@ -8,7 +8,6 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 // import { useDarkMode } from "usehooks-ts";
 
 const NetworksSelectBoxOut: React.FC<Omit<Appstate, "tokenAmount"> & extendprops> = ({
-  tokenAmount,
   networkOut,
   networkIn,
   setterFun,

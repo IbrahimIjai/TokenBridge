@@ -10,7 +10,7 @@ export interface extendprops {
 
 const NetworksSelectBoxIn: React.FC<Omit<Appstate, "tokenAmount"> & extendprops> = ({
   networkIn,
-  networkOut,
+  // networkOut,
   setterFun,
 }) => {
   return (
@@ -52,4 +52,3 @@ const NetworksSelectBoxIn: React.FC<Omit<Appstate, "tokenAmount"> & extendprops>
 };
 
 export default NetworksSelectBoxIn;
-const bsc = "https://raw.githubusercontent.com/sushiswap/list/master/logos/network-logos/bsc.jpg";

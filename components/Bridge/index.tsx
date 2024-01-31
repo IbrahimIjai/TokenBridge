@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {, useState } from "react";
 import { NUMBER_REGEX } from "../Swap/utils";
 import { InputBase } from "../scaffold-eth";
 import BridgeButton from "./BridgeButton";
@@ -30,6 +30,16 @@ const Bridge2 = () => {
   };
 
   const handleSetNetwork = (networkId: number, isnetWorkIn: boolean) => {
+    if (isnetWorkIn && networkId == value.networkOut) {
+      const prevNetworkIn = value.networkIn;
+      setValue(prevState => ({
+        ...prevState,
+        networkIn: networkId,
+        networkOut: prevNetworkIn,
+      }));
+      return;
+    }
+
     isnetWorkIn
       ? setValue(prevState => ({
           ...prevState,
@@ -40,6 +50,7 @@ const Bridge2 = () => {
           networkOut: networkId,
         }));
   };
+
 
   return (
     <section className="min-h-[400px] flex flex-col gap-8 rounded-lg bg-base-100 border border-gray-400 dark:border-gray-700 p-2 lg:w-[480px] max-w-full">
