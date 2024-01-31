@@ -1,8 +1,7 @@
 import React from "react";
 import { NUMBER_REGEX } from "../Swap/utils";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
-// import { parseEther } from "viem";
-import {  formatUnits } from "viem";
+import { formatUnits, parseEther } from "viem";
 import { useAccount } from "wagmi";
 import { useScaffoldContractRead, useScaffoldContractWrite } from "~~/hooks/scaffold-eth";
 
@@ -23,10 +22,17 @@ const BridgeButton: React.FC<SwapButtonProps> = ({ networkIn, networkOut, tokenA
 
   const inSufficientFunds = cusTokenBalance && cusTokenBalance < Number(tokenAmount);
 
+  //   const { writeAsync, isLoading } = useScaffoldContractWrite({
+  //     contractName: "Bridge",
+  //     functionName: "deposit",
+  //     args: [address, tokenAmount, networkOut],
+  //   });
+
   const { writeAsync, isLoading } = useScaffoldContractWrite({
     contractName: "Bridge",
     functionName: "deposit",
-    args: [address, formatUnits(BigInt(tokenAmount), 18), Number(networkOut)],
+    address: "0x4060d5D726D435CF32899ac5c7f633Ff4c9feaD2",
+    args: [address as string, Number(tokenAmount), networkOut],
   });
 
   return (

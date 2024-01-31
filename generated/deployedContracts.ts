@@ -1,17 +1,19 @@
 import { bridge_abi } from "./bridge-abi";
 import { erc20ABI } from "wagmi";
+
+
 const contracts = {
   1: [
     {
       chainId: "1",
-      name: "mainnet",
+      name: "Ethereum",
       contracts: {
         Bridge: {
           address: "0x4060d5D726D435CF32899ac5c7f633Ff4c9feaD2",
           abi: bridge_abi
         },
         customToken: {
-          address: "0x69a2AB99A6d9c077FEB98eFf5492F551C19aFF40 ",
+          address: "0x69a2AB99A6d9c077FEB98eFf5492F551C19aFF40",
           abi: erc20ABI
         },
       },
@@ -20,14 +22,14 @@ const contracts = {
   56: [
     {
       chainId: "56",
-      name: "bsc",
+      name: "BNB Smart Chain",
       contracts: {
         Bridge: {
           address: "0x4060d5D726D435CF32899ac5c7f633Ff4c9feaD2",
           abi: bridge_abi
         },
         customToken: {
-          address: "0xE5b940c20C45f6Ff42B061542865a5667A8A6A15 ",
+          address: "0xE5b940c20C45f6Ff42B061542865a5667A8A6A15",
           abi: erc20ABI
         },
       },
@@ -36,14 +38,14 @@ const contracts = {
   137: [
     {
       chainId: "137",
-      name: "polygon",
+      name: "Polygon",
       contracts: {
         Bridge: {
           address: "0x4060d5D726D435CF32899ac5c7f633Ff4c9feaD2",
           abi: bridge_abi
         },
         customToken: {
-          address: "0x69a2AB99A6d9c077FEB98eFf5492F551C19aFF40 ",
+          address: "0x69a2AB99A6d9c077FEB98eFf5492F551C19aFF40",
           abi: erc20ABI
         },
       },

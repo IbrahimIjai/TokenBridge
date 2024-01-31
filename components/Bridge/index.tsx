@@ -2,10 +2,12 @@ import { useState } from "react";
 import { NUMBER_REGEX } from "../Swap/utils";
 import { InputBase } from "../scaffold-eth";
 import BridgeButton from "./BridgeButton";
-import NetworksSelectBox from "./NetworkSelectBox";
+import NetworksSelectBoxIn from "./NetworkSelectBoxIn";
+import NetworksSelectBoxOut from "./NetworkSelectBoxOut";
 import { useNetwork } from "wagmi";
+import { enabledChains } from "~~/services/web3/wagmiConnectors";
 
-interface Appstate {
+export interface Appstate {
   networkIn: number;
   networkOut: number;
   tokenAmount: string;
@@ -19,6 +21,7 @@ const Bridge2 = () => {
     tokenAmount: "",
   });
 
+  console.log(enabledChains);
   const handleTokenAmountChange = (amount: string) => {
     setValue(prevState => ({
       ...prevState,
@@ -26,10 +29,22 @@ const Bridge2 = () => {
     }));
   };
 
+  const handleSetNetwork = (networkId: number, isnetWorkIn: boolean) => {
+    isnetWorkIn
+      ? setValue(prevState => ({
+          ...prevState,
+          networkIn: networkId,
+        }))
+      : setValue(prevState => ({
+          ...prevState,
+          networkOut: networkId,
+        }));
+  };
+
   return (
     <section className="min-h-[400px] flex flex-col gap-8 rounded-lg bg-base-100 border border-gray-400 dark:border-gray-700 p-2 lg:w-[480px] max-w-full">
-      <NetworksSelectBox />
-      <NetworksSelectBox />
+      <NetworksSelectBoxIn setterFun={handleSetNetwork} networkIn={value.networkIn} networkOut={value.networkOut} />
+      <NetworksSelectBoxOut setterFun={handleSetNetwork} networkIn={value.networkIn} networkOut={value.networkOut} />
 
       <div className="px-2 py-4 bg-primary/30 rounded-2xl">
         <InputBase
